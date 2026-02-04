@@ -1,5 +1,5 @@
-class Solution {                         // Solution class start
-    public int maxProduct(int[] nums) { // Function jo max product return karega
+class Solution {                         
+    public int maxProduct(int[] nums) { 
         
         int max1 = 0, max2 = 0;          // max1 = sabse bada number, max2 = doosra sabse bada
         
