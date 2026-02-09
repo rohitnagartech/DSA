@@ -1,25 +1,25 @@
 class Solution {
     public boolean isPalindrome(int x) {
-        
-        // if Negative Number
-        if(x<0){
-            return false;
+
+        // If number is negative, it cannot be palindrome
+        if (x < 0) {
+            return false;                  // return false for negative numbers
         }
 
-        int n = x;
-        int revNum = 0;
+        int n = x;                        // store original number in n
+        int revNum = 0;                  // variable to store reversed number
 
-        while(n>0){
-            int lastDigit = n % 10;
-            revNum = revNum * 10 + lastDigit;
-            n = n / 10;
+        while (n > 0) {                  // loop until all digits are processed
+
+            int lastDigit = n % 10;      // get last digit of number
+            revNum = revNum * 10 + lastDigit; // build reverse number
+            n = n / 10;                  // remove last digit
         }
 
-        if(revNum == x){
-            return true;
-        }else{
-            return false;
+        if (revNum == x) {               // compare reversed number with original
+            return true;                 // if same → palindrome
+        } else {
+            return false;                // else → not palindrome
         }
-
     }
 }
