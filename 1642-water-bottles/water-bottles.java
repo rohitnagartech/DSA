@@ -1,14 +1,19 @@
 class Solution {
     public int numWaterBottles(int numBottles, int numExchange) {
-        int ans = numBottles;
 
-        while(numBottles >= numExchange){
-            int newBottles = numBottles / numExchange;
-            int remBottles = numBottles % numExchange;
-            ans = ans + newBottles;
-            numBottles = newBottles + remBottles;
+        int ans = numBottles; // store total bottles drunk (start with initial bottles)
+
+        while (numBottles >= numExchange) { // loop while exchange is possible
+
+            int newBottles = numBottles / numExchange; // number of new bottles we get by exchange
+
+            int remBottles = numBottles % numExchange; // remaining empty bottles after exchange
+
+            ans = ans + newBottles; // drink new bottles → add to total count
+
+            numBottles = newBottles + remBottles; // update bottles for next round
         }
 
-        return ans;
+        return ans; // return total bottles drunk
     }
 }
